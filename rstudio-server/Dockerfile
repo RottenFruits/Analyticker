@@ -11,8 +11,7 @@ RUN yum -y install epel-release && \
 #install r and rstudio server
 RUN sudo yum -y install R && \
     mkdir downloads && \
-    cd downloads/ && \
-    wget -q https://download2.rstudio.org/rstudio-server-rhel-1.1.463-x86_64.rpm && \
+    wget -q downloads/https://download2.rstudio.org/rstudio-server-rhel-1.1.463-x86_64.rpm && \
     sudo yum -y install rstudio-server-rhel-1.1.463-x86_64.rpm
     
 #user setting
