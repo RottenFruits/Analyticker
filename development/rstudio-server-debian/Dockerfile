@@ -25,11 +25,10 @@ RUN sudo apt-get update && \
     sudo apt-get install -y r-base-core && \
     sudo add-apt-repository -y ppa:marutter/c2d4u3.5 && \
     sudo apt-get update && \
-    sudo apt-get install -y r-cran-tidyverse r-cran-devtools r-cran-rstan 
-    #&& \
-    #mkdir downloads && \
-    #wget -q https://download2.rstudio.org/rstudio-server-1.1.463-amd64.deb -P ./downloads/ && \
-    #sudo gdebi -n ./downloads/rstudio-server-1.1.463-amd64.deb
+    sudo apt-get install -y r-cran-tidyverse r-cran-devtools r-cran-rstan && \
+    mkdir downloads && \
+    wget -q https://download2.rstudio.org/rstudio-server-1.1.463-amd64.deb -P ./downloads/ && \
+    sudo gdebi -n ./downloads/rstudio-server-1.1.463-amd64.deb
 
 #user setting
 RUN adduser rstudio && \
