@@ -28,8 +28,8 @@ RUN jupyter notebook --generate-config && \
 
 #install packages
 RUN conda install -y -c conda-forge pystan && \
-    conda install -y -c conda-forge tensorflow && \
-    conda install -y -c conda-forge keras && \
+    #conda install -y -c conda-forge tensorflow && \
+    #conda install -y -c conda-forge keras && \
     conda install -y -c anaconda chainer && \
     conda install -y pytorch-cpu torchvision-cpu -c pytorch
 
