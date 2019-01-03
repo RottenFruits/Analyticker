@@ -24,6 +24,6 @@ ENV PATH $PATH:/root/anaconda3/bin
 
 RUN jupyter notebook --generate-config && \
     sed -i -e "s/#c.NotebookApp.ip = 'localhost'/c.NotebookApp.ip = '0.0.0.0'/" /root/.jupyter/jupyter_notebook_config.py && \
-    sed -i -e "s/#c.NotebookApp.allow_remote_access = False/c.NotebookApp.allow_remote_access = '*'" /root/.jupyter/jupyter_notebook_config.py
+    sed -i -e "s/#c.NotebookApp.allow_remote_access = False/c.NotebookApp.allow_remote_access = '*'/" /root/.jupyter/jupyter_notebook_config.py
 
 EXPOSE 8888
