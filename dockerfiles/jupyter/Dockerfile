@@ -30,3 +30,4 @@ RUN jupyter notebook --generate-config && \
 RUN conda install -y -c conda-forge pystan
 
 EXPOSE 8888
+

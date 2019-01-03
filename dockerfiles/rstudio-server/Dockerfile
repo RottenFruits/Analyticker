@@ -36,3 +36,4 @@ RUN adduser rstudio && \
     echo "rstudio:rstudio" | chpasswd
 
 EXPOSE 8787
+
