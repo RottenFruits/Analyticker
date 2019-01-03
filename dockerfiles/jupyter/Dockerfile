@@ -34,7 +34,7 @@ RUN conda install -y -c conda-forge pystan && \
     conda install -y pytorch-cpu torchvision-cpu -c pytorch
 
 #install julia
-RUN conda install -y -c conda-forge julia
+#RUN conda install -y -c conda-forge julia
 
 
 EXPOSE 8888
