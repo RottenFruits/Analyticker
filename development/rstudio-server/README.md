@@ -18,13 +18,3 @@ docker image rm rstudio-server
 
 
 docker run -it --name test ubuntu:18.04 /bin/bash
-
-apt-get install libssl1.0.0
-
-
-
-'httr', 'rvest', 'xml2'
-
-libcurl4-openssl-dev
-libssl-dev
-libxml2-dev
