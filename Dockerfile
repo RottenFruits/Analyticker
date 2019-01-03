@@ -1,5 +1,6 @@
 FROM ubuntu:18.04
 
+#set up timezone
 #https://sleepless-se.net/2018/07/31/docker-build-tzdata-ubuntu/
 RUN DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y tzdata
