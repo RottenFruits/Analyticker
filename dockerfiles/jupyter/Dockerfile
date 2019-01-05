@@ -34,10 +34,9 @@ RUN conda config -y --remove channels conda-forge && \
 
 #install python packages
 RUN conda install -y -c conda scikit-learn && \
-
     conda install -y -c conda-forge pystan && \
-    #conda install -y tensorflow && \
-    #conda install -y keras && \
+    conda install -y tensorflow && \
+    conda install -y keras && \
     conda install -y -c anaconda chainer && \
     conda install -y pytorch-cpu torchvision-cpu -c pytorch
 
