@@ -6,7 +6,7 @@ services:
 ## containers build
 before_install: 
   - docker build -t rstudio-server dockerfiles/rstudio-server
-  - docker build -t rottenfruits/analyticker:jupyter .
+  - docker build -t jupyter dockerfiles/jupyter
     
 ## simple test
 script:
