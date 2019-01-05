@@ -27,8 +27,8 @@ RUN jupyter notebook --generate-config && \
     sed -i -e "s/#c.NotebookApp.allow_remote_access = False/c.NotebookApp.allow_remote_access = True/" /root/.jupyter/jupyter_notebook_config.py
 
 
-RUN conda config -y --remove channels conda-forge && \
-    conda upgrade -y --all && \
+#conda config --remove channels conda-forge && \
+RUN conda upgrade -y --all && \
     conda clean -y --packages && \
     conda install -y python=3.6
 
@@ -42,7 +42,7 @@ RUN conda install -y -c conda scikit-learn && \
 
 #install julia and setup jupyter
 RUN conda install -y -c conda-forge julia && \
-    julia -e "using Pkg; Pkg.add('IJulia')"
+    julia -e 'using Pkg; Pkg.add("IJulia")'
 
 #install r and setup jupyter
 RUN conda install -y -c r r && \
