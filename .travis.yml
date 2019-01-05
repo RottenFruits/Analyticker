@@ -5,7 +5,7 @@ services:
 
 ## containers build
 before_install: 
-  - docker build -t Analyticker/dockerfiles/rstudio-server .
+  - docker build -t rottenfruits/analyticker:rstudio-server .
     
 ## A few simple / crude tests
 script:
