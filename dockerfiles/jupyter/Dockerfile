@@ -26,10 +26,17 @@ RUN jupyter notebook --generate-config && \
     sed -i -e "s/#c.NotebookApp.ip = 'localhost'/c.NotebookApp.ip = '0.0.0.0'/" /root/.jupyter/jupyter_notebook_config.py && \
     sed -i -e "s/#c.NotebookApp.allow_remote_access = False/c.NotebookApp.allow_remote_access = True/" /root/.jupyter/jupyter_notebook_config.py
 
+
+RUN conda config -y --remove channels conda-forge && \
+    conda upgrade -y --all && \
+    conda clean -y --packages
+
 #install python packages
-RUN conda install -y -c conda-forge pystan && \
-    #conda install -y -c conda-forge tensorflow && \
-    #conda install -y -c conda-forge keras && \
+RUN conda install -y -c conda scikit-learn && \
+
+    conda install -y -c conda-forge pystan && \
+    #conda install -y tensorflow && \
+    #conda install -y keras && \
     conda install -y -c anaconda chainer && \
     conda install -y pytorch-cpu torchvision-cpu -c pytorch
 
