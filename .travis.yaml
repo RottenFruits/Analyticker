@@ -1,0 +1,13 @@
+sudo: required
+
+services:
+  - docker
+
+## containers build
+before_install: 
+  - docker build -t dockerfiles/rstudio-server .
+    
+## A few simple / crude tests
+script:
+  - docker run -it --name rstudio-server -p 8787:8787 rstudio-server /bin/bash
+ 
