@@ -40,9 +40,13 @@ RUN conda install -y -c conda scikit-learn && \
     conda install -y -c anaconda chainer && \
     conda install -y pytorch-cpu torchvision-cpu -c pytorch
 
-#install julia
+#install julia and setup jupyter
 RUN conda install -y -c conda-forge julia && \
-    julia -e 'using Pkg; Pkg.add("IJulia")'
+    julia -e "using Pkg; Pkg.add('IJulia')"
+
+#install r and setup jupyter
+RUN conda install -y -c r r && \
+    Rscript -e "options(repos='https://cran.ism.ac.jp/'); install.packages('IRkernel'); IRkernel::installspec()"
+
 
 EXPOSE 8888
-
