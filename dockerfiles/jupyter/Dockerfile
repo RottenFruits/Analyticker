@@ -29,7 +29,8 @@ RUN jupyter notebook --generate-config && \
 
 RUN conda config -y --remove channels conda-forge && \
     conda upgrade -y --all && \
-    conda clean -y --packages
+    conda clean -y --packages && \
+    conda install -y python=3.6
 
 #install python packages
 RUN conda install -y -c conda scikit-learn && \
@@ -41,8 +42,8 @@ RUN conda install -y -c conda scikit-learn && \
     conda install -y pytorch-cpu torchvision-cpu -c pytorch
 
 #install julia
-#RUN conda install -y -c conda-forge julia
-
+RUN conda install -y -c conda-forge julia && \
+    julia -e 'using Pkg; Pkg.add("IJulia")'
 
 EXPOSE 8888
 
