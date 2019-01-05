@@ -8,28 +8,14 @@ Analyticker is analytics environments of docker for data scientists and data ana
 
 - under construction
 
-## Base Docker Containers
+## Docker image's description
 
-image            | description                               | size   | metrics | build status 
----------------- | ----------------------------------------- | ------ | ------- | --------------
-rstudio-server|a                                          |a       |a        |a
-jupyter|a                                          |a       |a        |a
-
-
+image            | description                               | size    
+---------------- | ----------------------------------------- | ------ 
+[rstudio-server](https://github.com/RottenFruits/Analyticker/tree/master/dockerfiles/rstudio-server)|Installed rstudio-server on ubuntu|[![](https://images.microbadger.com/badges/image/rottenfruits/analyticker:rstudio-server.svg)](https://microbadger.com/images/rottenfruits/analyticker:rstudio-server "Get your own image badge on microbadger.com")
+[jupyter](https://github.com/RottenFruits/Analyticker/tree/master/dockerfiles/jupyter)|Installed jupyter on ubuntu. Available kernels are python, R, julia.|[![](https://images.microbadger.com/badges/image/rottenfruits/analyticker:jupyter.svg)](https://microbadger.com/images/rottenfruits/analyticker:jupyter "Get your own image badge on microbadger.com")
 
 ## todo 
-- pystan
-- tesorflow
-- pytorch
-- chainer
-- keras
+- document
 
 and more
-
-
-## memo
-docker build -t analyticker .
-
-docker run -it --name rstudio-server -p 8787:8787 analyticker /bin/bash
-
-sudo rstudio-server verify-installation
