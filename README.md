@@ -26,11 +26,11 @@ jupyter notebook --allow-root
 
 Confirm your token:
 
-![p1](img/2019-01-06_12.10.57.png)
+![p1](https://raw.githubusercontent.com/RottenFruits/Analyticker/master/img/2019-01-06_12.10.57.png)
 
 Access http://localhost:8888 and type your token:
 
-![p2](img/2019-01-06_12.03.48.png)
+![p2](https://raw.githubusercontent.com/RottenFruits/Analyticker/master/img/2019-01-06_12.03.48.png)
 
 
 ### Rstudio-sever
@@ -46,9 +46,9 @@ Start rstudio-server:
 sudo rstudio-server verify-installation
 ```
 
-Type username and password, both 'rstudio':
+Access http://localhost:8787 type username and password, both 'rstudio':
 
-![p3](img/2018-12-31_19.59.16.png)
+![p3](https://raw.githubusercontent.com/RottenFruits/Analyticker/master/img/2018-12-31_19.59.16.png)
 
 
 ## Docker image's description
