@@ -1,4 +1,9 @@
-# rstuio-server
+# Rstuio-server
+
+## Installed representive pakcges
+- tidyverse
+- Rstan
+
 
 ## usage
 

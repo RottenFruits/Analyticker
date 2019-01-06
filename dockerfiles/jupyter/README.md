@@ -1,17 +1,19 @@
 # jupyter
 
-## usage
+## Installed kernels
 
-```bash
-docker build -t jupyter .
-docker run -it --name jupyter -p 8888:8888 jupyter /bin/bash
-jupyter notebook --allow-root
-```
+- Python
+- R
+- Julia
 
-## delete
+## Installed representive pakcges
 
-```bash
-docker container stop jupyter
-docker container rm jupyter
-docker image rm jupyter
-```
+- scikit-learn
+- pystan
+- tensorflow
+- keras
+- chainer
+- pytorch
+
+etc
+
