@@ -12,7 +12,13 @@ RUN set -x
 
 #install utility command
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends wget sudo software-properties-common build-essential
+    apt-get install -y --no-install-recommends wget sudo software-properties-common build-essential git curl file
+
+#install mecab
+RUN apt-get install -y --no-install-recommends mecab libmecab-dev mecab-ipadic-utf8
+RUN git clone https://github.com/neologd/mecab-ipadic-neologd.git downloads/mecab-ipadic-neologd
+RUN yes yes| downloads/mecab-ipadic-neologd/bin/install-mecab-ipadic-neologd
+RUN sed -i -e 's/\/var\/lib\/mecab\/dic\/debian/\/usr\/lib\/x86_64-linux-gnu\/mecab\/dic\/mecab-ipadic-neologd/' etc/mecabrc
 
 #install jupyter
 #https://daichan.club/linux/78323
@@ -21,6 +27,7 @@ RUN sudo apt-get update && \
     wget -q https://repo.continuum.io/archive/Anaconda3-2018.12-Linux-x86_64.sh -P ./downloads/ && \
     bash ./downloads/Anaconda3-2018.12-Linux-x86_64.sh -b
 ENV PATH $PATH:/root/anaconda3/bin
+
 #setup jupyter
 RUN jupyter notebook --generate-config && \
     sed -i -e "s/#c.NotebookApp.ip = 'localhost'/c.NotebookApp.ip = '0.0.0.0'/" /root/.jupyter/jupyter_notebook_config.py && \
@@ -38,7 +45,9 @@ RUN conda install -y -c conda scikit-learn && \
     conda install -y tensorflow && \
     conda install -y keras && \
     conda install -y -c anaconda chainer && \
-    conda install -y pytorch-cpu torchvision-cpu -c pytorch
+    conda install -y pytorch-cpu torchvision-cpu -c pytorch && \
+    conda install -y -c anaconda swig && \
+    conda install -y c anaconda gensim
 
 #install julia and setup jupyter
 RUN conda install -y -c conda-forge julia && \
@@ -47,6 +56,10 @@ RUN conda install -y -c conda-forge julia && \
 #install r and setup jupyter
 RUN conda install -y -c r r && \
     Rscript -e "options(repos='https://cran.ism.ac.jp/'); install.packages('IRkernel'); IRkernel::installspec()"
+
+#insatll nlp tool
+RUN pip install janome && \
+    pip install mecab-python3
 
 
 EXPOSE 8888
