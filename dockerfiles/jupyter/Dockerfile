@@ -14,6 +14,9 @@ RUN set -x
 RUN apt-get update && \
     apt-get install -y --no-install-recommends wget sudo software-properties-common build-essential git curl file
 
+#create directory
+RUN mkdir downloads
+
 #install mecab
 RUN apt-get install -y --no-install-recommends mecab libmecab-dev mecab-ipadic-utf8
 RUN git clone https://github.com/neologd/mecab-ipadic-neologd.git downloads/mecab-ipadic-neologd
@@ -22,8 +25,7 @@ RUN sed -i -e 's/\/var\/lib\/mecab\/dic\/debian/\/usr\/lib\/x86_64-linux-gnu\/me
 
 #install jupyter
 #https://daichan.club/linux/78323
-RUN sudo apt-get update && \
-    mkdir downloads && \
+RUN sudo apt-get update && \    
     wget -q https://repo.continuum.io/archive/Anaconda3-2018.12-Linux-x86_64.sh -P ./downloads/ && \
     bash ./downloads/Anaconda3-2018.12-Linux-x86_64.sh -b
 ENV PATH $PATH:/root/anaconda3/bin
