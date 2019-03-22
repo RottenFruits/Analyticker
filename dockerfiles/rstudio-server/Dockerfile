@@ -1,18 +1,19 @@
-FROM ubuntu:18.04
+FROM rottenfruits/analyticker:common
 
 #set up timezone
 #https://sleepless-se.net/2018/07/31/docker-build-tzdata-ubuntu/
-RUN DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y tzdata
-# timezone setting
-ENV TZ=Asia/Tokyo
+# RUN DEBIAN_FRONTEND=noninteractive
+# RUN apt-get update && apt-get install -y tzdata
+# # timezone setting
+# ENV TZ=Asia/Tokyo
 
-#print command
-RUN set -x
+# #print command
+# RUN set -x
 
-#install utility command
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends wget sudo ed clang ccache software-properties-common dirmngr gpg-agent gdebi-core
+# #install utility command
+# RUN apt-get update && \
+#     apt-get install -y --no-install-recommends wget sudo ed clang ccache software-properties-common dirmngr gpg-agent gdebi-core
+
 
 #install r and rstudio server and packages
 #https://rtask.thinkr.fr/blog/installation-of-r-3-5-on-ubuntu-18-04-lts-and-tips-for-spatial-packages/
