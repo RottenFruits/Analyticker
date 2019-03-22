@@ -20,5 +20,8 @@ RUN sudo apt-get update && \
 RUN adduser rstudio && \
     echo "rstudio:rstudio" | chpasswd
 
+#locale set
+RUN sudo update-locale LANG=ja_JP.UTF-8
+
 EXPOSE 8787
 

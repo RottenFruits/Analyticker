@@ -12,7 +12,7 @@ RUN set -x
 
 #install utility common command
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends wget sudo
+    apt-get install -y --no-install-recommends wget sudo language-pack-ja fonts-ipafont fonts-ipaexfont
 #install utility for jupyter
 RUN apt-get install -y --no-install-recommends software-properties-common build-essential git curl file
 #install utility for rstudio
