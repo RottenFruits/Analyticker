@@ -1,0 +1,1 @@
+install.packages("RMeCab", repos = "http://rmecab.jp/R", type = "source") 

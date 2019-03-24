@@ -23,5 +23,9 @@ RUN adduser rstudio && \
 #locale set
 RUN sudo update-locale LANG=ja_JP.UTF-8
 
+#install packges
+ADD install.r /tmp
+RUN Rscript /tmp/install.r
+
 EXPOSE 8787
 
