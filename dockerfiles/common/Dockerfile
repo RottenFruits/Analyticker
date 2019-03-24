@@ -12,9 +12,9 @@ RUN set -x
 
 #install utility common command
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends wget sudo language-pack-ja fonts-ipafont fonts-ipaexfont libboost-dev
+    apt-get install -y --no-install-recommends wget sudo language-pack-ja fonts-ipafont fonts-ipaexfont libboost-dev git-lfs maven nkf
 #install java
-RUN apt-get install -y --no-install-recommends default-jre default-jdk
+RUN apt-get install -y --no-install-recommends default-jre default-jdk openjdk-8-jre openjdk-8-jdk
 #install utility for jupyter
 RUN apt-get install -y --no-install-recommends software-properties-common build-essential git curl file
 #install utility for rstudio
@@ -37,3 +37,11 @@ RUN cd downloads && \
     ./configure && \
     make && \
     sudo make install
+
+#install sudachi
+# RUN yes 2| sudo update-alternatives --config java && \
+#     yes 2| sudo update-alternatives --config javac && \
+#     git clone https://github.com/WorksApplications/Sudachi.git downloads/Sudachi && \
+#     cd downloads/Sudachi/ && \
+#     mvn dependency:tree && \
+#     mvn package
