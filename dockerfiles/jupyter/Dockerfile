@@ -38,7 +38,8 @@ RUN conda install -y -c r r && \
 
 #insatll nlp tool
 RUN pip install janome && \
-    pip install mecab-python3
+    pip install mecab-python3 && \
+    pip install sentencepiece
 
 
 EXPOSE 8888
