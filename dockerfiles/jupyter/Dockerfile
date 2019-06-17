@@ -27,6 +27,8 @@ RUN conda install -y -c conda scikit-learn && \
     conda install -y pytorch-cpu torchvision-cpu -c pytorch && \
     conda install -y -c anaconda swig && \
     conda install -y -c anaconda gensim && \
+    conda install -y -c conda-forge lightgbm && \
+    conda install -y -c conda-forge catboost && \
     pip install Boruta
 
 #install julia and setup jupyter
