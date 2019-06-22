@@ -29,7 +29,8 @@ RUN conda install -y -c conda scikit-learn && \
     conda install -y -c anaconda gensim && \
     conda install -y -c conda-forge lightgbm && \
     conda install -y -c conda-forge catboost && \
-    pip install Boruta
+    pip install Boruta && \
+    pip install optuna
 
 #install julia and setup jupyter
 RUN conda install -y -c conda-forge julia && \
