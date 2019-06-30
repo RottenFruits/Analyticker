@@ -30,7 +30,8 @@ RUN conda install -y -c conda scikit-learn && \
     conda install -y -c conda-forge lightgbm && \
     conda install -y -c conda-forge catboost && \
     pip install Boruta && \
-    pip install optuna
+    pip install optuna && \
+    pip install rgf_python
 
 #install julia and setup jupyter
 RUN conda install -y -c conda-forge julia && \
